@@ -1,0 +1,33 @@
+﻿@model WebApplication1.ViewModel.ContactModel
+
+@{
+    ViewBag.Title = "Contact Details";
+}
+
+<h2>Contact Details</h2>
+<div class="row">
+    <div class="col-sm-6">
+        <table class="table table-responsive">
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Firstname)</td>
+                <td>@Html.DisplayFor(model => model.Firstname)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Lastname)</td>
+                <td>@Html.DisplayFor(model => model.Lastname)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Phone)</td>
+                <td>@Html.DisplayFor(model => model.Phone)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Address)</td>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+            </tr>
+        </table>
+    </div>
+</div>

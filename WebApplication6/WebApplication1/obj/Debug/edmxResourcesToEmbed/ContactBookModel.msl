@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyContactBookModelStoreContainer" CdmEntityContainer="MyContactBookEntities4">
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="MyContactBookModel.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="phoneid" ColumnName="phoneid" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="MyContactBookModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="email1" ColumnName="email" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phones">
+      <EntityTypeMapping TypeName="MyContactBookModel.Phone">
+        <MappingFragment StoreEntitySet="Phone">
+          <ScalarProperty Name="phoneid" ColumnName="phoneid" />
+          <ScalarProperty Name="phone1" ColumnName="phone" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

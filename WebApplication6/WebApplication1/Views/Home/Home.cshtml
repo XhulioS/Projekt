@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication1.ViewModel.ContactModel>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+    var grid = new WebGrid(source: Model, canPage: true, canSort: true, rowsPerPage: 10);
+}
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Signout", "Contact", FormMethod.Post))
+    {
+        <a href="@Url.Action("Login", "Home")">Logout</a>
+    }
+}
+
+
+<h2>Contact List</h2>
+<div style="overflow:auto">
+    @grid.GetHtml(
+tableStyle: "table table-responsive",
+columns: grid.Columns
+(
+grid.Column("Firstname", "First Name"),
+grid.Column("Lastname", "Last Name"),
+grid.Column("Email", "Email"),
+grid.Column("Phone", "Phone"),
+grid.Column("Address", "Address"),
+grid.Column(header: "View", format: (item) => Html.ActionLink("View", "View", "Home", new { id = item.ContactID }, null)),
+grid.Column(header: "Edit", format: (item) => Html.ActionLink("Edit", "Edit", "Home", new { id = item.ContactID }, null)),
+grid.Column(header: "Delete", format: (item) => Html.ActionLink("Delete", "Delete", "Home", new { id = item.ContactID }, null))
+)
+)
+
+</div>
